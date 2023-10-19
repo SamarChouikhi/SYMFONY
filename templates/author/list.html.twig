@@ -1,0 +1,23 @@
+{% for author in a %}
+{% if author is empty %}
+<p> pas de contenu </p>
+ {% else %}
+
+    // <p>Name: {{ author['username']  | upper}}</p>
+    <a href="{{path('d',{'id':author['username']})}}"> details </a>
+     <img src="{{author.picture}}" alt="">
+{% endif %}
+{% endfor %}
+
+
+{% set s=0 %}
+{% for author in a %}
+{% set s=s+author['nb_books'] %}
+{% endfor %}
+<p> le nombre est : {{ s }} </p>
+
+{% set l=0 %}
+{% for author in a %}
+{% set l=l+1%}
+{% endfor %}
+<p> le nombre est : {{ l }} </p>

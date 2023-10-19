@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classrooms</title>
+
+    <style>
+        /* Styles for buttons */
+        .action-button {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+
+        .action-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Liste des classrooms :</h1>
+    <h3><a class="action-button" href="{{ path('addC') }}">Modifier une autre classe</a></h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ref</th>
+                <th>name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for t in Response %}
+                <tr>
+                    <td>{{ t.ref }}</td>
+                    <td>{{ t.name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>
